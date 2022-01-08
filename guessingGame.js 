@@ -1,0 +1,24 @@
+let maximumNumber = parseInt(prompt("Enter Your Maximum Number: "));
+let targetNumber = Math.floor(Math.random()*maximumNumber)+1;
+let guess = parseInt(prompt("Enter your first guess:"));
+let attempt = 1;
+
+while (parseInt(guess) !== targetNumber) { 
+    if (guess === "quit") { 
+        break;
+    }
+    attempt++; 
+    if (parseInt(guess) > targetNumber) { 
+       guess = prompt("Too high, Enter a new guess")
+    }
+    else { 
+       guess = prompt("Too low, Enter a new guess")
+    }
+}
+
+if (guess === "quit") { 
+    console.log("Dumb Dumb");
+}
+else {
+console.log(`Well done, it took you ${attempt} guesses`);
+}
